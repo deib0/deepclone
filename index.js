@@ -19,7 +19,7 @@ const deepClone=function(xxx,cache){
         // 判断是函数
         if(typeof xxx === 'function'){
             // 判断是普通函数还是箭头函数
-            if(xxx.property){
+            if(xxx.prototype){
                 result = function(params){return xxx.apply(this,params)}
             }else{
                 result =(...params)=>{return xxx.call(undefined,...params)}
